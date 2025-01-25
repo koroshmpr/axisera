@@ -1,0 +1,43 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `forms` layer
+ *
+ * Add your own forms classes to this theme. Complex utility forms should
+ * be added using Tailwind’s plugin system:
+ *
+ */
+.gform_wrapper {
+	.gform_fields {
+		@apply max-lg:!flex flex-wrap;
+		.gfield {
+			@apply max-lg:w-full;
+		}
+		.gfield--type-submit{
+			@apply max-lg:w-fit;
+		}
+	}
+
+	.gform_required_legend {
+		@apply !hidden
+	}
+	input[id^="gform_submit_button_"]{
+		@apply !btn-yellow !bg-yellow;
+	}
+	.gform_body {
+		input:not([type="submit"]), textarea {
+			@apply !bg-[#FBFBFB] !border !border-black max-lg:!w-full;
+		}
+
+		input:not([type="submit"]), select {
+			@apply !rounded-xl max-lg:!w-full;
+		}
+
+		textarea {
+			@apply !rounded-2xl;
+		}
+	}
+	.submition-text {
+		@apply flex items-center max-lg:!w-8/12 max-lg:mx-auto;
+		order: 1;
+		display: none;
+	}
+}

@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: OCRAStd;
+    font-style: normal;
+    font-weight: 500;
+    src:
+    url('OCRAStd.woff') format('woff'),
+    url('OCRAStd.woff2') format('woff2');
+    font-display: swap;
+}
