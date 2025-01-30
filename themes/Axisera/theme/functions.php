@@ -260,6 +260,14 @@ function optimize_site() {
 			wp_dequeue_style( 'dashicons' );
 		} );
 	}
+
+	// Dequeue Block Library CSS (Gutenberg Styles)
+	add_action( 'wp_enqueue_scripts', function () {
+		wp_dequeue_style( 'wp-block-library' ); // Default block styles
+		wp_deregister_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' ); // Extra styles for block themes
+		wp_deregister_style( 'wp-block-library-theme' );
+	}, 100 ); // Ensure it runs late
 }
 
 add_action( 'init', 'optimize_site' );

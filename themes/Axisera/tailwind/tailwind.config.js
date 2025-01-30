@@ -26,7 +26,7 @@ module.exports = {
 			container: {
 				center: true, // Optional: Centers the container
 				screens: {
-					sm: '100%', // Full width for small screens
+					sm: '376px', // Full width for small screens
 					md: '768px', // Default medium max-width
 					lg: '1024px', // Default large max-width
 					xl: '1300px', // Default extra-large max-width

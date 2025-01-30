@@ -23,26 +23,38 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 		// The GF form often has class "gform_wrapper" + <form> inside
 	const gfForm = document.querySelector('.gform_wrapper form');
+
 	if (gfForm) {
-		gfForm.addEventListener('submit', function(e) {
-			// 1) If form is NOT valid, let the browser show validation warnings; skip the delayed submission
+		gfForm.addEventListener('submit', function (e) {
+			// Prevent form submission if invalid
 			if (!gfForm.checkValidity()) {
-				// This will trigger the browser to show errors for required fields
-				// and block the submission
 				e.preventDefault();
 				gfForm.reportValidity();
 				return;
 			}
-			if (gfForm.checkValidity()) {
-				// 2) If the form *is* valid, do the delayed submission
-				e.preventDefault(); // block immediate submit
-				document.querySelector('.submition-text')?.style.setProperty("display", "block");
-				document.querySelector('.form_subtitle')?.style.setProperty("display", "none");
 
-				// Wait 3 seconds, then *actually* submit the form
-				setTimeout(function () {
-					gfForm.submit();
-				}, 3000);
+			// Prevent default submission for 3 seconds
+			e.preventDefault();
+			document.querySelector('.submition-text')?.style.setProperty("display", "block");
+			document.querySelector('.form_subtitle')?.style.setProperty("display", "none");
+
+			setTimeout(function () {
+				gfForm.submit();
+			}, 3000);
+		});
+
+		// Hook into Gravity Forms after submission event
+		document.addEventListener("gform_confirmation_loaded", function () {
+			// Keep form visible
+			gfForm.style.display = "block";
+
+			// Clear form fields after submission
+			gfForm.reset();
+
+			// Hide the Gravity Forms success message
+			const gfSuccessMessage = document.querySelector(".gform_confirmation_message");
+			if (gfSuccessMessage) {
+				gfSuccessMessage.style.display = "none";
 			}
 		});
 	}
