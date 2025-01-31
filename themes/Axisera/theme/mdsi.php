@@ -25,7 +25,7 @@ $columns = get_field('columns');
 		<?php
 		$args = array(
 			'navClass' => 'max-w-[90vw] sm:max-w-[60vw] md:max-w-[300px] lg:max-w-[220px] ',
-			'titleClass' => 'max-sm:text-2xl text-4xl md:text-2xl stroke-1',
+			'titleClass' => 'max-sm:text-2xl text-4xl md:text-2xl stroke-1 stroke-gray ',
 			'svgClass'   => 'lg:size-52 size-32',
 		);
 		get_template_part('template-parts/global/circle-menu', null, $args); ?>

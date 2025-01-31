@@ -13,7 +13,7 @@ if ($menu) :?>
 			<a href="<?= $page_url ?>"
 			   class="aspect-square grid box-content group relative justify-center items-center">
 				<span
-					class="text-center origin-center -rotate-45 group-hover:scale-110 transition-all <?= $duration ?? ''; ?> stroke-black text-transparent group-hover:text-<?= $pageColor; ?> absolute <?= $titleClass ?? ''; ?>
+					class="text-center origin-center -rotate-45 group-hover:scale-110 transition-all <?= $duration ?? ''; ?> text-transparent group-hover:text-<?= $pageColor; ?> absolute <?= $titleClass ?? ''; ?>
 				<?= ($item['direction'] == 'up' ? 'top-[10%] start-[-30%] lg:start-[-50%]' :
 						($item['direction'] == 'down' ? 'bottom-[10%] start-[20%] lg:start-[-10%]' :
 							($item['direction'] == 'left' ? 'top-[60%] lg:top-[70%] end-[20%] lg:end-[10%] rotate-[-135deg]' :

@@ -7,7 +7,7 @@ get_header(); ?>
 	<?php
 	$args = array(
 		'navClass' => ' max-sm:w-[85vw] max-md:w-[75vw] max-w-[400px] max-lg:max-w-[500px] xl:max-w-[600px] ',
-		'titleClass' => 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl stroke-2 ',
+		'titleClass' => 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl stroke-2 stroke-black ',
 		'svgClass' => 'size-40 lg:size-64',
 	);
 	get_template_part('template-parts/global/circle-menu', null, $args); ?>

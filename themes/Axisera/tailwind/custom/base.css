@@ -28,3 +28,16 @@ ul {
 		@apply !text-secondary
 	}
 }
+ /*SCROLL bar styles*/
+   ::-webkit-scrollbar {
+	   width: 8px;
+	   height: 2px;
+   }
+
+::-webkit-scrollbar-track {
+	@apply bg-white
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-black/80
+}

@@ -21,6 +21,7 @@ module.exports = {
 				yellow : '#FFF783',
 				green : '#BDFF96',
 				red : '#FF9999',
+				gray : '#757575',
 				purple : '#FFB0FB',
 			},
 			container: {
